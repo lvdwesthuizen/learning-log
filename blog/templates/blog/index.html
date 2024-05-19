@@ -1,0 +1,22 @@
+<!-- blog/templates/blog/index.html -->
+
+{% extends "base.html" %}
+
+{% block page_title %}
+    <h1 class="text-2xl mt-12 mb-12">Blog</h1>
+{% endblock page_title %}
+
+{% block page_content %}
+    {% block posts %}
+        {% for post in posts %}
+        <div class="flex items-center mb-2">
+            <div class="flex items-center mr-3">
+               <div class="text-sm text-purple-200">{{ post.created_on|date:'Y' }}</div>
+               <div class="mx-1">.</div>
+               <div class="text-sm text-purple-200">{{ post.created_on|date:'m' }}</div>
+            </div>
+            <h3 class="text-sm underline underline-offset-4"><a href="{% url 'blog_detail' post.pk %}">{{ post.title }}</a></h3>
+         </div>
+        {% endfor %}
+    {% endblock posts %}
+{% endblock page_content %}

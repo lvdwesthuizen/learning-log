@@ -1,0 +1,16 @@
+<!-- templates/base.html -->
+
+{% load static tailwind_tags %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Blog</title>
+    {% tailwind_css %}
+</head>
+<body class="max-w-lg m-auto bg-[#161616] h-screen w-full text-[#E7E7E7]">
+{% block page_title %}{% endblock page_title %}
+{% block page_content %}{% endblock page_content %}
+</body>
+</html>
