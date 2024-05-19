@@ -3,17 +3,19 @@
 {% extends "base.html" %}
 
 {% block page_title %}
-    <h2>{{ post.title }}</h2>
+    <h2 class="max-w-2xl m-auto pl-8 pt-12">{{ post.title }}</h2>
 {% endblock page_title %}
 
 {% block page_content %}
-    <small>
-        {{ post.created_on.date }} | Categories:
-        {% for category in post.categories.all %}
-            <a href="{% url 'blog_category' category.name %}">
-                {{ category.name }}
-            </a>
-        {% endfor %}
-    </small>
-    <p>{{ post.body | linebreaks }}</p>
+   <div class="max-w-2xl m-auto pl-8 pt-4">
+      <div class="mb-4 text-sm">
+         {{ post.created_on.date }} | Categories:
+         {% for category in post.categories.all %}
+               <a href="{% url 'blog_category' category.name %}">
+                  {{ category.name }}
+               </a>
+         {% endfor %}
+      </div>
+      <p>{{ post.body | linebreaks }}</p>
+   </div>
 {% endblock page_content %}

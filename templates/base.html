@@ -8,8 +8,9 @@
     <meta charset="utf-8">
     <title>Blog</title>
     {% tailwind_css %}
+    <link rel="stylesheet" href="{% static 'fonts/robotomono.css' %}">
 </head>
-<body class="max-w-lg m-auto bg-[#161616] h-screen w-full text-[#E7E7E7]">
+<body class="bg-white h-screen w-full text-gray-800 font-body">
 {% block page_title %}{% endblock page_title %}
 {% block page_content %}{% endblock page_content %}
 </body>
